@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/roomImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_chat_group"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/roomName"
+        android:layout_toRightOf="@+id/roomImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:text="roomname"
+
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/lastMessage"
+        android:layout_below="@+id/roomName"
+        android:layout_toRightOf="@+id/roomImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:text="lastmsg"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/textViewGroupType"
+        android:layout_below="@+id/lastMessage"
+        android:layout_marginLeft="5dp"
+       android:textColor="@android:color/darker_gray"
+        android:layout_toRightOf="@+id/roomImage" />
+
+    <TextView
+        android:id="@+id/text_dialog_unread_count"
+        android:layout_height="20dp"
+        android:layout_width="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/shape_rectangle"
+        android:gravity="center"
+        android:textColor="@color/text_color_white"
+        android:visibility="visible"
+        tools:text="4" />
+
+
+</RelativeLayout>

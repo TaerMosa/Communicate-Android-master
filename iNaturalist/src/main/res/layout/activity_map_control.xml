@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/frag_id">
+
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:background="#ffffff"
+
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="1">
+
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:paddingRight="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="8dp"
+                android:layout_height="45dp">
+
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/PrivacySetting"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="3dp"
+                android:background="@android:color/holo_green_dark"
+                />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:paddingRight="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_height="90dp">
+
+                <ImageView
+                    android:id="@+id/Name_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/communi_username"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:tint="#686868"
+                    />
+                <TextView
+                    android:id="@+id/UserName_TV"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_toRightOf="@id/Name_icon"
+                    android:layout_toEndOf="@id/Name_icon"
+                    android:text="@string/username"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:id="@+id/UserNameText"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/UserName_TV"
+                    android:text="@string/username"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/userName_RG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Name_icon"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/real_userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:text="@string/RealUserName"
+                        />
+                    <RadioButton
+                        android:id="@+id/fake_userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:text="@string/AnynemousUserName"
+                        android:checked="true"
+
+                        />
+
+
+                </RadioGroup>
+
+
+            </RelativeLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:background="#dfdfdf"
+                />
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:paddingRight="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_height="90dp">
+
+
+                <ImageView
+                    android:id="@+id/location_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/placeholder"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:tint="#686868"
+                    />
+                <TextView
+                    android:id="@+id/my_real_fake_location"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/myRealFakeLocation"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    android:layout_toRightOf="@id/location_icon"
+                    android:layout_toEndOf="@id/location_icon"
+                    />
+                <RadioGroup
+                    android:id="@+id/my_mainLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/location_icon"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/real_location_RBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:text="@string/RealLoc"
+                        />
+                    <RadioButton
+                        android:id="@+id/Fake_location_RBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:checked="true"
+                        android:text="@string/FakeLoc"
+
+                        />
+                    />
+
+                </RadioGroup>
+            </RelativeLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:background="#dfdfdf"
+                />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:paddingRight="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_height="90dp">
+
+                <ImageView
+                    android:id="@+id/visible_on_others_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/communi_visiblity_ic"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:tint="#686868"
+                    />
+                <TextView
+                    android:id="@+id/visibleonmap_TV"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_toRightOf="@id/visible_on_others_icon"
+                    android:layout_toEndOf="@id/visible_on_others_icon"
+                    android:text="@string/WhoCanSeeMeonothermaps"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/visibleonmap_RadioG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/visible_on_others_icon"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/see_Everyone_RBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:text="@string/Everyone"
+                        />
+                    <RadioButton
+                        android:id="@+id/see_Mycontacts_RBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:text="@string/Mycontacts"
+
+                        />
+                    <RadioButton
+                        android:id="@+id/see_Nobody_RBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:checked="true"
+                        android:text="@string/Nobody"
+
+                        />
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:background="#dfdfdf"
+                />
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:paddingRight="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_height="90dp">
+
+                <ImageView
+                    android:id="@+id/conact_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/communi_contactme"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:tint="#686868"
+                    />
+                <TextView
+                    android:id="@+id/ConactMe_TV"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_toRightOf="@id/conact_icon"
+                    android:layout_toEndOf="@id/conact_icon"
+                    android:text="@string/WhoCanContactMe"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/ConactRadioG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/conact_icon"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/conact_Everyone_RBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:text="@string/Everyone"
+                        />
+                    <RadioButton
+                        android:id="@+id/conact_Mycontacts_RBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:text="@string/Mycontacts"
+                        />
+                    <RadioButton
+                        android:id="@+id/conact_Nobody_RBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:text="@string/Nobody"
+                        android:checked="true"
+
+                        />
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:background="#dfdfdf"
+                />
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
+                android:paddingRight="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_height="90dp">
+
+                <ImageView
+                    android:id="@+id/see_on_mymap_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/communi_what_isee"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:tint="#686868"
+                    />
+                <TextView
+                    android:id="@+id/seeon_mymap_TV"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_toRightOf="@id/see_on_mymap_icon"
+                    android:layout_toEndOf="@id/see_on_mymap_icon"
+                    android:text="@string/whatIcanSee"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/seeon_mymap_RadioG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/see_on_mymap_icon"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/seeMyMap_Everyone_RBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:text="@string/Everyone"
+                        />
+                    <RadioButton
+                        android:id="@+id/seeMyMap_Mycontacts_RBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:text="@string/Mycontacts"
+
+                        />
+                    <RadioButton
+                        android:id="@+id/seeMyMap_Nobody_RBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/RadioButtoniNatAppTheme"
+                        android:text="@string/Nobody"
+                        android:checked="true"
+
+                        />
+
+                </RadioGroup>
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:background="#dfdfdf"
+                />
+
+            <Button
+                android:id="@+id/Apply_Id_btn"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/circular_button"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/abs__background_holo_light"
+                android:textStyle="bold"
+                android:text="@string/ApplyBtn"
+                />
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/horizontalScrollView"
+                android:layout_weight="0.92" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.inaturalist.android"
+    android:versionCode="111"
+    android:versionName="1.4.6">
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="org.tazpiteva.android.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="org.tazpiteva.android.permission.MAPS_RECEIVE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <!--
+         4. Declare and use a custom permission so only this application can receive GCM messages.
+               This permission must be called my_app_package.permission.C2D_MESSAGE
+               (where my_app_package is the package name of your app as defined by the manifest tag),
+               otherwise it will not work.
+    -->
+    <permission
+        android:name="org.tazpiteva.android.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="org.tazpiteva.android.permission.C2D_MESSAGE" />
+
+    <!-- 5. Add the following permissions: -->
+    <!-- App receives GCM messages. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!-- GCM connects to Google Services. -->
+
+
+    <!-- GCM requires a Google account. -->
+
+
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Access to  device info -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name=".INaturalistApp"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/iNatAppTheme">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/gmaps2_api_key" />
+
+        <activity
+            android:name=".TutorialActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ObservationListActivity" />
+        </activity>
+        <activity
+            android:name=".GuideDetails"
+            android:configChanges="orientation"
+            android:label="@string/guides"
+            android:parentActivityName=".GuidesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GuidesActivity" />
+        </activity>
+        <activity
+            android:name=".GuideTaxonActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GuideDetails" />
+        </activity>
+        <activity
+            android:name=".ProjectDetails"
+            android:configChanges="orientation"
+            android:label="@string/projects">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ProjectsActivity" />
+        </activity>
+        <activity
+            android:name=".ProjectsActivity"
+            android:configChanges="orientation"
+            android:label="@string/projects" />
+        <activity
+            android:name=".GuidesActivity"
+            android:configChanges="orientation"
+            android:label="@string/guides" />
+        <activity
+            android:name=".ProjectSelectorActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name"
+            android:theme="@style/iNatAppThemeCustomActionBar" />
+        <activity
+            android:name=".CommentsIdsActivity"
+            android:configChanges="orientation"
+            android:label="@string/comments_ids" />
+        <activity
+            android:name=".IdentificationActivity"
+            android:configChanges="orientation"
+            android:label="@string/add_id" />
+        <activity
+            android:name=".TaxonSearchActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".LoginSignupActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OnboardingActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ObservationListActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ObservationEditor"
+            android:configChanges="orientation"
+            android:label="@string/app_name"
+            android:theme="@style/iNatAppThemeCustomActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ObservationListActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+                <action android:name="android.intent.action.INSERT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.google.observation" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.google.observation" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.google.observation_photo" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.google.observation_photo" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.google.inatproject" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.google.inatproject" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.google.projectobservation" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.google.projectobservation" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".INaturalistPrefsActivity"
+            android:configChanges="orientation"
+            android:label="@string/settings" />
+        <!--
+        <activity android:name="com.facebook.LoginActivity"
+          android:theme="@android:style/Theme.Translucent.NoTitleBar"
+          android:label="@string/app_name" />
+        -->
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name=".INaturalistMapActivity"
+            android:configChanges="orientation"
+            android:label="@string/map" />
+        <activity
+            android:name=".INaturalistMapActivityWithDefaultProject"
+            android:configChanges="orientation"
+            android:label="@string/map" />
+        <activity
+            android:name=".LocationChooserActivity"
+            android:configChanges="orientation"
+            android:label="@string/choose_location" />
+        <activity
+            android:name=".WebActivity"
+            android:configChanges="orientation"
+            android:label="@string/activity" />
+        <activity
+            android:name=".ObservationDetails"
+            android:configChanges="orientation" />
+        <activity
+            android:name=".ObservationPhotosViewer"
+            android:configChanges="orientation" />
+        <activity
+            android:name=".TaxonTagPhotosViewer"
+            android:configChanges="orientation" />
+
+        <provider
+            android:name=".ObservationProvider"
+            android:authorities="org.tazpiteva.android.observation;org.tazpiteva.android.observation_photo;org.tazpiteva.android.project;org.tazpiteva.android.project_observation;org.tazpiteva.android.project_field;org.tazpiteva.android.project_field_value" />
+
+        <service android:name=".INaturalistService" />
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="7baaee0ca8a376b3d129b908c1e03be6ecbe5786" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="64183d7d66cd775484843a6b26e6f92072d9006f" />
+
+        <activity
+            android:name="org.tatzpiteva.golan.LaunchScreenActivity"
+            android:theme="@style/Theme.Sherlock.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.tatzpiteva.golan.Students_ChatMap_Project.View.Communicate"
+            android:label="@string/communicate" />
+        <activity
+            android:name="org.tatzpiteva.golan.Students_ChatMap_Project.chat.ui.activities.SplashActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.tatzpiteva.golan.Students_ChatMap_Project.chat.ui.activities.NewDialogActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.tatzpiteva.golan.Students_ChatMap_Project.chat.ui.activities.DialogsActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.tatzpiteva.golan.Students_ChatMap_Project.chat.ui.activities.ChatActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- GCM (Push Notifications) setup: http://developer.android.com/google/gcm/gs.html#android-app -->
+
+
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="org.tatzpiteva.golan.Students_ChatMap_Project.chat" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="org.tatzpiteva.golan.Students_ChatMap_Project.chat.pushnotifications.GcmPushListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="org.tatzpiteva.golan.Students_ChatMap_Project.chat.pushnotifications.GcmPushInstanceIDService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <!--
+           <provider
+           android:name="vc908.stickerfactory.provider.StickersProvider"
+           android:authorities="com.quickblox.sample.chat.stickersProvider"
+           android:exported="false"/>
+        -->
+
+        <activity
+            android:name="org.tatzpiteva.golan.Students_ChatMap_Project.View.Accept_FrReq_Ac"
+            android:label="@string/title_activity_accept__fr_req_" />
+        <activity
+            android:name="org.tatzpiteva.golan.Students_ChatMap_Project.View.AllFriends"
+            android:label="@string/title_activity_all_friends"></activity>
+    </application>
+
+</manifest>

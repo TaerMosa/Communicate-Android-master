@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/inatapptheme_color"
+    android:id="@+id/head">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:text="Select a dialog to chat"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
+</RelativeLayout>
+    <ListView
+        android:id="@+id/roomsList"
+        android:layout_below="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
+    <LinearLayout
+        android:id="@+id/layout_chat_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:onClick="onStartNewChatClick"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:text="@string/chat_empty_you_are_alone_here"
+            android:textColor="@color/text_color_dark_grey"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@string/chat_empty_start_new_chat"
+            android:textColor="@color/text_color_green"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ProgressBar
+        style="@style/Widget.Sherlock.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/fab_dialogs_new_chat"
+        style="@style/ImageButtoniNatAppTheme"
+        android:onClick="onStartNewChatClick"
+        android:src="@drawable/ic_action_start_chat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circular_btnadd"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/roomsList" />
+
+</RelativeLayout>

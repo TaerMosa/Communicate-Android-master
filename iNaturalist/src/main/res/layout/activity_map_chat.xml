@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.googlemapsemenara.FirstCourseMenu" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeLayout1"
+        style="@style/ListViewiNatAppTheme"
+        android:background="@color/random_color_5"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        >
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="@string/sendfriendrequest"
+            android:textSize="20dp" />
+
+        <ImageButton
+            android:id="@+id/friends_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/ic_chat_group" />
+
+        <ImageButton
+            android:id="@+id/request_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_add_white_24dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/countReq"
+            android:layout_toLeftOf="@+id/request_btn"
+            android:text="0"
+            android:textColor="@color/common_signin_btn_default_background"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+
+
+
+
+    <ListView
+        android:id="@+id/list1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.12"
+        android:layout_below="@id/RelativeLayout1"
+        tools:listitem="@layout/row" >
+    </ListView>
+    <ImageButton
+        android:id="@+id/refresh_btn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_refresh_black_24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/uploaduserlist"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/refresh_btn"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

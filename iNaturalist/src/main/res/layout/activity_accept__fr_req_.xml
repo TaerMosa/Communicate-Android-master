@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.googlemapsemenara.FirstCourseMenu" >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeLayout1"
+        style="@style/ListViewiNatAppTheme"
+        android:background="@color/inatapptheme_color"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        >
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="@string/acceptfriends"
+            android:textSize="20dp" />
+
+
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/list_Fr_Req"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RelativeLayout1"
+        tools:listitem="@layout/row_friend_req_accept" >
+    </ListView>
+
+    <ImageButton
+        android:id="@+id/refresh_Fr_req_btn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_refresh_black_24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/uploadrequestlist"
+        android:id="@+id/up_re_list"
+        android:layout_below="@+id/refresh_Fr_req_btn"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

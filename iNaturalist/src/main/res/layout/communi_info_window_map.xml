@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/RelativeLayout1"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RelativeLayout2"
+        android:background="@drawable/communi_info_window"
+        android:orientation="horizontal"
+        >
+        <RelativeLayout
+            android:id="@+id/user_pic_container_infoWindow"
+            android:background="@drawable/circular_image"
+            android:layout_marginLeft="2dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+            <ImageView
+                android:id="@+id/no_user_pic_infowindow"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/usericon" />
+            <ImageView
+                android:id="@+id/user_pic_infowindow"
+                android:layout_width="fill_parent"
+                android:visibility="gone"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_person_white_24dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/user_pic_container_infoWindow"
+            android:layout_toEndOf="@id/user_pic_container_infoWindow"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="7dp"
+            android:textColor="@android:color/white"
+            android:textSize="10dp"
+            android:text="BB"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/destance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userName"
+            android:layout_toRightOf="@id/user_pic_container_infoWindow"
+            android:layout_toEndOf="@id/user_pic_container_infoWindow"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="AA"
+            android:textColor="@android:color/white"
+            android:textSize="10dp"
+            android:textStyle="bold"/>
+
+</RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+

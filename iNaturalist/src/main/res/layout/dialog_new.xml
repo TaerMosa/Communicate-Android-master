@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="20dp">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/RelativeLayout1"
+    style="@style/ListViewiNatAppTheme"
+    android:layout_alignEnd="@+id/usersList"
+    android:background="@color/inatapptheme_color"
+    android:layout_alignParentStart="true">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:text="select users to chat"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/search"
+        android:layout_alignParentLeft="true"
+       android:padding="5dp"
+        android:layout_centerInParent="true"
+
+        />
+
+</RelativeLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/usersList"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ptr:ptrMode="pullFromEnd"
+        android:dividerHeight="2px"
+        android:divider="@android:color/holo_red_light"
+        />
+
+    <ProgressBar
+        style="@style/Widget.Sherlock.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="@style/ButtoniNatAppTheme"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Create Chat"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:background="@drawable/shape_rectangle_semi_transparent"
+        android:textColor="@android:color/white"
+
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_alignBottom="@+id/usersList"
+        android:visibility="gone"
+        android:layout_alignEnd="@+id/usersList" />
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/createChatButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end"
+        android:layout_marginBottom="25dp"
+        android:layout_marginStart="16dp"
+        android:padding="14dp"
+        android:src="@drawable/ic_add_white_24dp"
+        android:scaleType="fitCenter"
+        fab:fab_colorNormal="@color/inatapptheme_color"
+        fab:fab_colorPressed="@color/inatapptheme_color_highlighted"
+        fab:fab_colorRipple="@color/inatapptheme_color_highlighted" />
+</RelativeLayout>

@@ -11,3 +11,11 @@ iNaturalistAndroid is an Android app for [iNaturalist.org](http://www.inaturalis
 1. From Android Studio: File -> Open -> Choose the root directory of the downloaded source code
 1. Clean & build
 
+## communicate setup
+Communicate is a mobile service adds new servises to Tazpiteva Community To streamline the communication between community members, facilitate coordination, organization and conflicts management. To achieve this goals we have chosen to develop new modules for Tazpiteva Android application :
+1- Chat Module for realtime communication including Private\Group chat rooms, Text Messages and Photos (based on QuickBlox chat model )
+2- Map module for realtime Displays of current locations of  User , Friends and public markers 
+
+
+
+

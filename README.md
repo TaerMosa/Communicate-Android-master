@@ -13,17 +13,19 @@ iNaturalistAndroid is an Android app for [iNaturalist.org](http://www.inaturalis
 
 ## communicate Project
 
-1.Communicate is a mobile service created by 
-1.Student : Mr Taer Mosa
-1.Student : Mr Hanna Salameh
-1.BSc (Information Systems) final project
-1.Instructor:Dr Ofer Arazy
-1.Department Of Information Systems
-1.University Of Haifa 
-
-1.Communicate is a mobile service adds new servises to Tazpiteva Community To streamline the communication between community members, facilitate coordination, organization and conflicts management. To achieve this goals we have chosen to develop new modules for Tazpiteva Android application :
-1- Chat Module for realtime communication including Private\Group chat rooms, Text Messages and Photos (based on QuickBlox chat model )
+Communicate is a mobile service adds new servises to Tazpiteva Community To streamline the communication between community members, facilitate coordination, organization and conflicts management. To achieve this goals we have chosen to develop new modules for Tazpiteva Android application :
+1- Chat Module for realtime communication including Private\Group chat rooms, Text Messages and Photos (based on QuickBlox chat model)
 2- Map module for realtime Displays of current locations of  User , Friends and public markers 
+
+#Communicate is a mobile service created by
+#Student : Mr Taer Mosa
+#Student : Mr Hanna Salameh
+#BSc (Information Systems) final project
+#Instructor:Dr Ofer Arazy
+#Department Of Information Systems
+#University Of Haifa 
+
+
 
 
 
